@@ -23,7 +23,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity{
 
-    private static final String TAG = "AUTHENTICATED";
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -41,12 +40,12 @@ public class MainActivity extends AppCompatActivity{
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if(user != null){
                     Toast.makeText(MainActivity.this, "Signed in as " + user.getUid(), Toast.LENGTH_LONG).show();
-                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                    Log.d(Constants.TAG, "onAuthStateChanged:signed_in:" + user.getUid());
 
                 }else{
                     Toast.makeText(MainActivity.this, "Sorry!! You need to sign in first", Toast.LENGTH_LONG).show();
                     loadLoginView();
-                    Log.d(TAG, "onAuthStateChanged:signed_out");
+                    Log.d(Constants.TAG, "onAuthStateChanged:signed_out");
                 }
 
             }
