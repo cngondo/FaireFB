@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity{
                     loadLoginView();
                     Log.d(Constants.TAG, "onAuthStateChanged:signed_out");
                 }
-
             }
         };
     }
@@ -63,7 +62,6 @@ public class MainActivity extends AppCompatActivity{
         super.onStop();
         mAuth.removeAuthStateListener(mAuthListener);
     }
-
     /*
     * The following method navigates to the Login view and clears the activity stack. This prevents the user going
     * back to the main activity when they press the Back button from the login view.
